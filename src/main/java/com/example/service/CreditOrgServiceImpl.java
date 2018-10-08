@@ -14,9 +14,9 @@ public class CreditOrgServiceImpl implements CreditOrgService {
     }
 
     @Override
-    public String getCreditOrgInfo(String bikCode) {
-        return cacheMap.computeIfAbsent(bikCode, s -> {
-            double intCode = delegate.getIntCode(bikCode);
+    public String getCreditOrgInfo(String bicCode) {
+        return cacheMap.computeIfAbsent(bicCode, s -> {
+            double intCode = delegate.getIntCode(bicCode);
             return delegate.getCreditOrgInfo(intCode);
         });
     }
