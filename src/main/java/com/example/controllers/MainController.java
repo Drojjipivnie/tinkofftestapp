@@ -20,9 +20,9 @@ public class MainController {
         this.service = service;
     }
 
-    @RequestMapping(value = "/getInfo", method = RequestMethod.GET, consumes = "application/json", produces = "text/plain;charset=UTF-8")
+    @RequestMapping(value = "/getOrgInfo", method = RequestMethod.GET, consumes = "application/json", produces = "text/plain;charset=UTF-8")
     @ResponseBody
-    public String getBIK(@RequestBody Bank bank) {
+    public String getOrgInfo(@RequestBody Bank bank) {
         if (bank.getBicCode() == null || !BicMatcher.match(bank.getBicCode())) {
             return "Incorrect Bic Code";
         }
